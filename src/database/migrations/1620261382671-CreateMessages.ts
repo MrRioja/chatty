@@ -37,7 +37,7 @@ export class CreateMessages1620261382671 implements MigrationInterface {
           {
             name: "FKUser",
             columnNames: ["user_id"],
-            referencedColumnNames: ["id "],
+            referencedColumnNames: ["id"],
             referencedTableName: "users",
             onDelete: "SET NULL",
             onUpdate: "SET NULL",
