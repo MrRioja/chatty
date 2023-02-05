@@ -1,4 +1,4 @@
-import { v4 as uuid } from "uuid";
+import { v4 as uuidV4 } from "uuid";
 import {
   Column,
   CreateDateColumn,
@@ -18,22 +18,20 @@ class Message {
   admin_id: string;
 
   @Column()
-  text: string;
+  user_id: string;
 
-  @JoinColumn({ name: "user_id" })
   @ManyToOne(() => User)
+  @JoinColumn({ name: "user_id" })
   user: User;
 
   @Column()
-  user_id: string;
+  text: string;
 
   @CreateDateColumn()
   created_at: Date;
 
   constructor() {
-    if (!this.id) {
-      this.id = uuid();
-    }
+    if (!this.id) this.id = uuidV4();
   }
 }
 

@@ -8,7 +8,7 @@ import {
   PrimaryColumn,
   UpdateDateColumn,
 } from "typeorm";
-import { v4 as uuid } from "uuid";
+import { v4 as uuidV4 } from "uuid";
 
 @Entity("connections")
 class Connection {
@@ -19,14 +19,14 @@ class Connection {
   admin_id: string;
 
   @Column()
-  socket_id: string;
+  user_id: string;
 
-  @JoinColumn({ name: "user_id" })
   @ManyToOne(() => User)
+  @JoinColumn({ name: "user_id" })
   user: User;
 
   @Column()
-  user_id: string;
+  socket_id: string;
 
   @CreateDateColumn()
   created_at: Date;
@@ -35,9 +35,7 @@ class Connection {
   updated_at: Date;
 
   constructor() {
-    if (!this.id) {
-      this.id = uuid();
-    }
+    if (!this.id) this.id = uuidV4();
   }
 }
 
