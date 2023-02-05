@@ -35,19 +35,19 @@ Vamos conhecer abaixo a aplicação da perspectiva dos clientes e dos administra
 
 Assim que o usuário acessa a página destinada à ele, irá se deparar com a tela abaixo. A tela não possui nada além do botão de suporte pois o propósito aqui é o chat de interação entre clientes e fornecedores.
 
-![Cliente - Home](client-home.png)
+![Cliente - Home](./.github/client-home.png)
 
 Ao clicar no botão flutuante `Suporte`, a janela de criação de chat será exibida. É nela onde o usuário informará seu e-mail para identificação e deixará sua mensagem para os responsáveis:
 
-![Cliente - Criação do Chat](client-chat-opened.png)
+![Cliente - Criação do Chat](./.github/client-chat-opened.png)
 
 Após informar os dados solicitados e iniciar o chat, a visualização da página será a seguinte:
 
-![Cliente - Chat iniciado](client-chatting.png)
+![Cliente - Chat iniciado](./.github/client-chatting.png)
 
 Conforme visto acima, a mensagem já foi enviada e o chat criado, basta aguardar uma resposta de um dos administradores para iniciarem uma conversa síncrona, como podemos ver abaixo o usuário sendo respondido e recebendo a resposta em tempo real:
 
-![Cliente - Mensagem respondida](client-response.png)
+![Cliente - Mensagem respondida](./.github/client-response.png)
 
 Veremos esse fluxo acontecendo desde o inicio no final do tópico da aplicação onde deixarei um GIF da aplicação em funcionamento.
 
@@ -55,11 +55,11 @@ Veremos esse fluxo acontecendo desde o inicio no final do tópico da aplicação
 
 Aos administradores, a homepage de gestão dos chats é basicamente uma lista com os atendimentos pendentes e o email do usuário de cada uma das solicitações:
 
-![Admin - Lista de chats](admin-chats-list.png)
+![Admin - Lista de chats](./.github/admin-chats-list.png)
 
 Após clicar no botão `Entrar em atendimento`, a mensagem enviada pelo usuário em questão será exibida e eles poderão conversar a respeito do assunto iniciado pelo cliente:
 
-![Admin - Chat](admin-chatting.png)
+![Admin - Chat](./.github/admin-chatting.png)
 
 Para ilustrar o fluxo da aplicação como um todo, deixo o GIF abaixo aonde navego por todas as partes da aplicação com a finalidade de demonstrar seu funcionamento:
 
