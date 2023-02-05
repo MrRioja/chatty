@@ -1,4 +1,4 @@
-import { getCustomRepository, Repository } from "typeorm";
+import { getCustomRepository } from "typeorm";
 import { Setting } from "../entities/Setting";
 import { SettingsRepository } from "../repositories/SettingsRepository";
 
@@ -8,29 +8,29 @@ interface ISettingsCreate {
 }
 
 class SettingsService {
-  private settingsRepository: Repository<Setting>;
+  private settingsRepository: SettingsRepository;
 
   constructor() {
     this.settingsRepository = getCustomRepository(SettingsRepository);
   }
 
   async create({ chat, username }: ISettingsCreate) {
-    const userAlreadyExists = await this.settingsRepository.findOne({
+    const settingsAlreadyExists = await this.settingsRepository.findOne({
       username,
     });
 
-    if (userAlreadyExists) {
-      throw new Error("User already exists");
+    if (settingsAlreadyExists) {
+      throw new Error("Settings already exists.");
     }
 
-    const settings = this.settingsRepository.create({
+    const setting = this.settingsRepository.create({
       chat,
       username,
     });
 
-    await this.settingsRepository.save(settings);
+    await this.settingsRepository.save(setting);
 
-    return settings;
+    return setting;
   }
 
   async findByUsername(username: string) {
@@ -48,4 +48,5 @@ class SettingsService {
       .execute();
   }
 }
+
 export { SettingsService };
