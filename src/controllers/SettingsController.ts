@@ -8,21 +8,22 @@ class SettingsController {
     const settingsService = new SettingsService();
 
     try {
-      const settings = await settingsService.create({ chat, username });
+      const setting = await settingsService.create({ chat, username });
 
-      return res.json(settings);
-    } catch (error) {
-      return res.status(400).json({ message: error.message });
+      return res.json(setting);
+    } catch (err) {
+      return res.status(400).json({ message: err.message });
     }
   }
 
   async findByUsername(req: Request, res: Response) {
     const { username } = req.params;
+
     const settingsService = new SettingsService();
 
-    const settings = await settingsService.findByUsername(username);
+    const setting = await settingsService.findByUsername(username);
 
-    return res.json(settings);
+    return res.json(setting);
   }
 
   async update(req: Request, res: Response) {
@@ -30,9 +31,9 @@ class SettingsController {
     const { chat } = req.body;
 
     const settingsService = new SettingsService();
-    const settings = await settingsService.update(username, chat);
+    await settingsService.update(username, chat);
 
-    return res.json(settings);
+    return res.send();
   }
 }
 
